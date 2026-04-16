@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://mkuuesoq1vnt"]
 
+[ext_resource type="Script" uid="uid://bw6whst7dlvyc" path="res://Player/SpaceCharacterController.cs" id="1_r150o"]
+
 [node name="Node3D" type="Node3D" unique_id=202264108]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1637484147]
@@ -8,8 +10,16 @@ radius = 10.0
 radial_segments = 20
 rings = 9
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=116663151]
-transform = Transform3D(1, 0, 0, 0, 0.9224303, 0.38616365, 0, -0.38616365, 0.9224303, 0, 9.19111, 21.856266)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2137276641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.842728, 37.74805, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1066590406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11.5, 16)
+script = ExtResource("1_r150o")
+
+[node name="CameraFollower" type="Node3D" parent="CharacterBody3D" unique_id=695023889]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraFollower" unique_id=1579241169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D" unique_id=1147534952]
