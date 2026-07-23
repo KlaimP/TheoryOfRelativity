@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://mkuuesoq1vnt"]
 
 [ext_resource type="Script" uid="uid://bw6whst7dlvyc" path="res://Player/SpaceCharacterController.cs" id="1_r150o"]
+[ext_resource type="Script" uid="uid://dldw1xx5hlqgn" path="res://Player/Camera/CameraFollower.cs" id="2_idj7w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
 [node name="Node3D" type="Node3D" unique_id=202264108]
 
@@ -18,8 +21,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11.5, 16)
 script = ExtResource("1_r150o")
 
 [node name="CameraFollower" type="Node3D" parent="CharacterBody3D" unique_id=695023889]
+script = ExtResource("2_idj7w")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraFollower" unique_id=1579241169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D" unique_id=1147534952]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=241278817]
+shape = SubResource("CapsuleShape3D_r150o")
