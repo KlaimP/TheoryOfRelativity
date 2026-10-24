@@ -5,7 +5,7 @@ public partial class CameraFollower : Node3D
     [Export] public float MouseSensitivity = 0.001f;
 
     public Camera3D _camera;
-    private SpaceCharacterController _player;
+    private SpacePlayer _player;
     
     private float _yaw = 0.0f;      // Горизонтальный поворот (влево/вправо)
     private float _pitch = 0.3f;    // Вертикальный поворот (вверх/вниз)
@@ -13,7 +13,7 @@ public partial class CameraFollower : Node3D
 
     public override void _Ready()
     {
-        _player = GetParent<SpaceCharacterController>();
+        _player = GetParent<SpacePlayer>();
         
         _camera = GetNodeOrNull<Camera3D>("Camera3D");
         if (_camera == null)
