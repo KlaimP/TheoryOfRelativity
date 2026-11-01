@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://Shaders/atmosphere.gdshader" id="1_atmo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_atmo")
+shader_parameter/rayleigh_color = Vector3(0.16, 0.4, 1)
+shader_parameter/rayleigh_strength = 1.0
+shader_parameter/mie_strength = 0.25
+shader_parameter/mie_direction = 0.8
+shader_parameter/density = 1.6
+shader_parameter/scale_height = 0.25
+shader_parameter/sun_intensity = 22.0
+shader_parameter/surface_haze = 0.12
